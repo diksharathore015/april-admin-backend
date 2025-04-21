@@ -59,10 +59,24 @@ class SeoSerializer(serializers.ModelSerializer):
             'id', 'title',  'logo' ,"image_id" ,'description','keywords','canonical_url','address','contact_number' ,'whatsapp_number','youtube_link','facebook_link','instagram_link','scripts', ]
 
 
+class FAQSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FAQ
+        fields = ['id',  'course' ,'question', 'answer']
 
+
+
+class FacilitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Facility
+        fields = ['id', 'title', 'description', 'image']
      
-      
-       
+class home_page_dataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = home_page_data
+        fields = ['id', 'title', 'description', ]
+        
+
       
        
     

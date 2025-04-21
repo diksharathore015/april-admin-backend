@@ -7,7 +7,7 @@ class CityNestedSerializer(serializers.ModelSerializer):
 class LocalitiesNestedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Locality
-        fields = ['id', 'locality_name', 'title', 'image']
+        fields = '__all__'
 class StatesNestedSerializer(serializers.ModelSerializer):
     class Meta:
         model = State

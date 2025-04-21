@@ -1,6 +1,7 @@
 from django.db import models
 from media.models import *
 # Create your models here.
+ 
 class Banners(models.Model):
     title = models.CharField(max_length=100 , blank=True , null=True)
     image = models.ManyToManyField(Media, related_name='image') 
@@ -29,3 +30,28 @@ class SEO(models.Model):
     
     def get_keywords(self): 
         return self.keywords.split(',') if self.keywords else []
+class FAQ(models.Model):
+    course =   models.ForeignKey(Course, on_delete=models.CASCADE , null= True , blank=True, related_name='faqs' ,help_text="Leave blank for homepage" )
+    question =  models.CharField(max_length=5000, blank=True, null=True) 
+    answer =    models.CharField(max_length=5000, blank=True, null=True) 
+    def __str__(self):
+        return self.question
+    
+    
+
+from django.db import models
+
+class Facility(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.URLField()  # You can also use an ImageField if you're storing images in your project
+
+    def __str__(self):
+        return self.title
+    
+
+class home_page_data(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    def __str__(self):
+        return self.title

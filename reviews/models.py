@@ -2,7 +2,7 @@ from django.db import models
 
 from .models import * 
 from allstudents.models import * 
-
+from courses.models import * 
 
 # Create your models here.
 class Review(models.Model):

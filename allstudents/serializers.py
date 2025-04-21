@@ -8,7 +8,9 @@ from media.serializers import *
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = ['id','title']
+        fields = [    'id', 'title','created_by' ,  'duration','short_description', 'description', 'slider_images', 
+            'contact_number', 'meta_keywords', 'slug',
+            'youtube_link', 'facebook_link', 'instagram_link','student_list']
 
 class StateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -59,14 +61,15 @@ class StudentSerializer(serializers.ModelSerializer):
         queryset=Media.objects.all(),
         source='image',  
         many=True,
-        write_only=True  
-    )
+        write_only=True  ,
+        allow_empty=True ,
+        )
     
     class Meta:
         model = Student
         fields = [
-            'id', 'name',  'homepage', 'image', 'image_id', 'courses', 'course_ids', 'states', 'state_ids' ,'cities', 'city_ids', 'localities', 'localities_ids','detail', 'contact_number' ,'youtube_link' ,'facebook_link' ,'instagram_link',
-            'meta_title', 'meta_descriptions', 'meta_keyWords' , 'rating' ,'review' ,
+            'id', 'name','homepage', 'image', 'image_id', 'courses', 'course_ids', 'states', 'state_ids' ,'cities', 'city_ids', 'localities', 'localities_ids','detail', 'contact_number' ,'youtube_link' ,'facebook_link' ,'instagram_link',
+            'meta_title' ,'meta_descriptions', 'meta_keyWords' , 'rating' ,'review' ,'slug'
         ]
 class StudentListSerializer(serializers.ModelSerializer):
        image =MediaSerializer(many=True, read_only=True)

@@ -6,6 +6,8 @@ from .views import *
 router = DefaultRouter()
 router.register(r'courses', CourseViewSet, basename='courses')
 router.register(r'courses_title', CourseTitleViewSet, basename='courses_title')
+router.register(r'instructors', InstructorViewSet)
+
 # router.register(r'courses_homepage', CourseTitleViewSet, basename='courses_homepage')
 
  

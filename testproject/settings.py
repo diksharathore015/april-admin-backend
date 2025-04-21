@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     'homepage',
     'django_filters'
 ]
+# settings.py
+DATA_UPLOAD_MAX_MEMORY_SIZE = 26214400  # 25 MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 26214400  # 25 MB
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

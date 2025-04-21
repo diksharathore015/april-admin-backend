@@ -58,7 +58,7 @@ class StudentSerializer(serializers.ModelSerializer):
         model = Students
         fields = [
             'id', 'name', 'image' , 'courses', 'course_ids', 'states', 'state_ids' ,'cities', 'city_ids', 'localities', 'localities_ids','detail', 'contact_number' ,'youtube_link' ,'facebook_link' ,'instagram_link',
-            'meta_title', 'meta_descriptions', 'meta_keyWords' , 'rating' ,'review' ,
+            'meta_title', 'meta_descriptions', 'meta_keyWords' , 'rating' ,'review' ,  
         ]
 
  
