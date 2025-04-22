@@ -1,9 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
 
 class FAQAdmin(admin.ModelAdmin):
-    list_filter = ('course',)  # Enables filtering by course
+    list_filter = ('course',)  
     list_display = ('question', 'course')  # Show course in list view
     
 from .models import *
